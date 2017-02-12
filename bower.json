@@ -1,11 +1,30 @@
 {
-    "author": "Cristian Angulo Nova",
-    "nickname": "@nietzcheson",
-    "web": "http://artesan.us",
-    "name": "Artesanus, Skeleton",
-    "version": "0.0.1",
-    "dependencies": {
-        "jquery": "latest",
-        "bootstrap": "latest"
-    }
+  "name": "skeleton",
+  "description": "Skeleton with html, bootstrap, sass, gulp ready to use",
+  "main": "",
+  "authors": [
+    "Cristian Angulo Nova <cristianangulonova@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "HTML",
+    "HTML5",
+    "Sass",
+    "Bootstrap",
+    "Gulp"
+  ],
+  "homepage": "https://github.com/nietzcheson/html-skeleton",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "*",
+    "jquery": "*",
+    "font-awesome": "*"
+
+  }
 }
