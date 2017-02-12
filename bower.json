@@ -1,0 +1,11 @@
+{
+    "author": "Cristian Angulo Nova",
+    "nickname": "@nietzcheson",
+    "web": "http://artesan.us",
+    "name": "Artesanus, Skeleton",
+    "version": "0.0.1",
+    "dependencies": {
+        "jquery": "latest",
+        "bootstrap": "latest"
+    }
+}
