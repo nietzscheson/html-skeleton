@@ -1,0 +1,6 @@
+.idea/*
+bower_components/*
+build/*
+dist/*
+.DS_Store
+node_modules/*
