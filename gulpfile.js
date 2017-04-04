@@ -33,7 +33,7 @@
 
     gulp.task('minify-css', function(){
 
-      var to = 'dist',
+      var to = 'dist/styles/',
           dest = to;
 
       minifyCss('styles/*.css', to, 'skeleton.min.css', dest);
@@ -52,7 +52,7 @@
 
     gulp.task('minify-js', function(){
 
-        var to = 'dist',
+        var to = 'dist/scripts/',
             dest = to;
 
         minifyJs('scripts/*.js', to, 'skeleton.min.js', dest);
@@ -61,20 +61,26 @@
 
     gulp.task('minify', ['minify-css','minify-js']);
 
+    gulp.task('copy-awesome-fonts', function(){
+        return gulp.src('bower_components/font-awesome/fonts/*')
+          .pipe(gulp.dest('./dist/fonts/'))
+        ;
+    });
+
     gulp.task('copy', function(){
 
         return gulp.src('index.html')
-          .pipe(rename('index.min.html'))
+          .pipe(rename('index.html'))
           .pipe(htmlreplace({
-                  'css': 'styles.min.css',
-                  'js': 'js/bundle.min.js'
+                  'css': 'styles/skeleton.min.css',
+                  'js': 'scripts/skeleton.min.js'
               }))
-          .pipe(gulp.dest('./'))
+          .pipe(gulp.dest('./dist'))
         ;
 
     });
 
-    gulp.task('build', ['minify','copy'], function(){});
+    gulp.task('build', ['minify','copy', 'copy-awesome-fonts'], function(){});
 
     gulp.task('sass', function () {
         return gulp.src('styles/*.sass')
