@@ -69,36 +69,21 @@
         var to = 'build/assets/vendors/',
             dest = to;
 
-        //minifyJs('scripts/*.js', to, 'skeleton.min.js', dest);
         minifyJs('bower_components/**/*.min.js', to, 'vendors.min.js', dest);
     });
 
     gulp.task('minify', ['minify-css','minify-js']);
 
-    gulp.task('copy-awesome-fonts', function(){
-        return gulp.src('bower_components/font-awesome/fonts/*')
-          .pipe(gulp.dest('./build/assets/vendors/fonts/'))
-        ;
+    gulp.task('fonts', function(){
+        return gulp.src([
+                'bower_components/font-awesome/fonts/fontawesome-webfont.*'])
+            .pipe(gulp.dest('build/assets/fonts/'));
     });
 
-/*    gulp.task('copy', function(){
-
-        return gulp.src('index.html')
-          .pipe(rename('index.html'))
-          .pipe(htmlreplace({
-                  'css': 'styles/skeleton.min.css',
-                  'js': 'scripts/skeleton.min.js'
-              }))
-          .pipe(gulp.dest('./dist'))
-        ;
-
-    });
-*/
-    //gulp.task('build', ['minify','copy', 'copy-awesome-fonts'], function(){});
-    gulp.task('build', ['minify', 'nunjucks', 'copy-awesome-fonts', 'sass'], function(){});
+    gulp.task('build', ['minify', 'nunjucks', 'fonts', 'sass'], function(){});
 
     gulp.task('sass', function () {
-        return gulp.src('styles/*.sass')
+        return gulp.src('app/styles/*.sass')
           .pipe(sass().on('error', sass.logError))
           .pipe(gulp.dest('build/assets'))
           .pipe(browserSync.stream())

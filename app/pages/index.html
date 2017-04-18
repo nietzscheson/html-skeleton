@@ -1,19 +1,31 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Index Pages</h1>
-
-<div class="gallery">
-    <!-- Loops through "images" array -->
-    {% for image in images %}
-    <div class="gallery__item">
-        <img src="{{image.src}}" alt="{{image.alt}}">
+<div class="container container-fluid">
+    <div class="jumbotron">
+        <h1 class="display-3">HTML Skeleton</h1>
+        <hr class="my-4">
+        <p class="lead">With:</p>
+        <ul>
+            <li>HTML5</li>
+            <li>Bootstrap</li>
+            <li>Sass</li>
+            <li>Font-Awesome</li>
+            <li>Gulp</li>
+            <li><a href="https://www.browsersync.io/" target="_blank">Browser-Sync</a></li>
+            <li><a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a></li>
+            <li></li>
+        </ul>
+        <p>Ready to use</p>
+        <hr class="my-4">
+        <p>
+        <div class="btn-group">
+            <a class="btn btn-primary btn-lg" href="https://twitter.com/nietzcheson" target="_blank" role="button"><i class="fa fa-twitter fa-lg"></i></a>
+            <a class="btn btn-primary btn-lg" href="https://github.com/nietzcheson" target="_blank" role="button"><i class="fa fa-github fa-lg"></i></a>
+            <a class="btn btn-primary btn-lg" href="https://github.com/nietzcheson/html-skeleton" target="_blank" role="button"><i class="fa fa-heart fa-lg"></i></a>
+        </div>
+        </p>
     </div>
-    {% endfor %}
-
-    {% for user in users %}
-        <h2>{{ user.name }}</h2>
-    {% endfor %}
 </div>
 
 {% endblock %}
