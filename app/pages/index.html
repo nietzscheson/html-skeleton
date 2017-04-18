@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Te amo</h1>
+<h1>Index Pages</h1>
 
 <div class="gallery">
     <!-- Loops through "images" array -->
@@ -9,6 +9,10 @@
     <div class="gallery__item">
         <img src="{{image.src}}" alt="{{image.alt}}">
     </div>
+    {% endfor %}
+
+    {% for user in users %}
+        <h2>{{ user.name }}</h2>
     {% endfor %}
 </div>
 
