@@ -4,7 +4,7 @@ Includes HTML5, Bootstrap, Sass, Font-Awesome, Gulp Browser-Sync and NunJucks re
 
 ## Setup
 
-* Clone the repo
+* Clone the repo.
 * Run `npm install` or `sudo npm install` to pull dependencies.
 * Run `bower install`.
 * Run `gulp build`.
@@ -13,7 +13,7 @@ Includes HTML5, Bootstrap, Sass, Font-Awesome, Gulp Browser-Sync and NunJucks re
 ## Usage
 
 * Run `gulp` to set up watches and Sass compiling.
-* Run 'gulp build' for build `dist` in ./build
+* Run 'gulp build' for build `dist` in ./build.
 
 ### License
 
