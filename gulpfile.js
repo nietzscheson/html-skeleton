@@ -10,7 +10,6 @@
         concat = require('gulp-concat'),
         rename = require('gulp-rename'),
         copy = require('gulp-copy'),
-        htmlreplace = require('gulp-html-replace'),
         nunjucksRender = require('gulp-nunjucks-render'),
         data = require('gulp-data');
 
@@ -80,7 +79,12 @@
             .pipe(gulp.dest('build/assets/fonts/'));
     });
 
-    gulp.task('build', ['minify', 'nunjucks', 'fonts', 'sass'], function(){});
+    gulp.task('images', function(){
+
+        return gulp.src('./app/images')
+                   .pipe(gulp.dest('./build'))
+            ;
+    });
 
     gulp.task('sass', function () {
         return gulp.src('app/styles/*.sass')
@@ -90,9 +94,10 @@
           ;
     });
 
+    gulp.task('build', ['minify', 'nunjucks', 'fonts', 'images', 'sass'], function(){});
+
     gulp.task('watch', function(){
 
-      //gulp.watch(['dist/*.css', '**/*.js', '**/*.html', '!gulpfile.js']).on('change', reload);
       gulp.watch(['build/**/*.html', '!gulpfile.js']).on('change', reload);
       gulp.watch('styles/*.sass', ['sass']);
       gulp.watch('app/**/*.html', ['nunjucks']);
